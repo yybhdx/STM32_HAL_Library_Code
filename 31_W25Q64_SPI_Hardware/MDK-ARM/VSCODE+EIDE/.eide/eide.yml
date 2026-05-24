@@ -56,8 +56,6 @@ virtualFolder:
           folders: []
         - name: W25Q64
           files:
-            - path: ../../Drivers/W25Q64/MySPI.c
-            - path: ../../Drivers/W25Q64/MySPI.h
             - path: ../../Drivers/W25Q64/W25Q64.c
             - path: ../../Drivers/W25Q64/W25Q64.h
             - path: ../../Drivers/W25Q64/W25Q64_Ins.h
@@ -202,4 +200,9 @@ targets:
         otherCmds: ""
         proType: 1
         speed: 8000
-    uploader: JLink
+      OpenOCD:
+        baseAddr: "0x08000000"
+        bin: ""
+        interface: cmsis-dap
+        target: stm32f1x
+    uploader: OpenOCD

@@ -54,11 +54,11 @@ virtualFolder:
           folders: []
         - name: W25Q64
           files:
+            - path: ../../Drivers/W25Q64/MySPI.c
+            - path: ../../Drivers/W25Q64/MySPI.h
             - path: ../../Drivers/W25Q64/W25Q64.c
             - path: ../../Drivers/W25Q64/W25Q64.h
             - path: ../../Drivers/W25Q64/W25Q64_Ins.h
-            - path: ../../Drivers/W25Q64/MySPI.c
-            - path: ../../Drivers/W25Q64/MySPI.h
           folders: []
     - name: ::CMSIS
       files: []
@@ -96,7 +96,8 @@ targets:
         options:
           version: 4
           afterBuildTasks: []
-          asm-compiler: {}
+          asm-compiler:
+            defines: []
           beforeBuildTasks: []
           c/cpp-compiler:
             CXX_FLAGS: --diag_suppress=1 --diag_suppress=1295
@@ -107,11 +108,14 @@ targets:
             warnings: all-warnings
           global:
             output-debug-info: enable
-            use-microLIB: true
+            use-microLIB: false
           linker:
             $outputTaskExcludes:
               - .bin
             output-format: elf
+            ro-base: ""
+            rw-base: ""
+            xo-base: ""
         scatterFilePath: ""
         storageLayout:
           RAM:
